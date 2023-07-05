@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Include CSS and other necessary imports -->
+  </head>
+  <body>
+    <h1>Edit Registration</h1>
+    <form method="POST" action="{% url 'edit_registration' registration.id %}">
+      {% csrf_token %}
+      <input type="text" name="name" value="{{ registration.name }}" />
+      <input type="text" name="gender" value="{{ registration.gender }}" />
+      <input type="text" name="email" value="{{ registration.email }}" />
+      <input type="text" name="address" value="{{ registration.address }}" />
+      <button type="submit">Save Changes</button>
+    </form>
+  </body>
+</html>
